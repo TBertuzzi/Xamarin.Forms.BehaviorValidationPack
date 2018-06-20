@@ -8,12 +8,12 @@
     <Description>Useful behaviors for field validation</Description>
     <Copyright>Copyright ©2018 KBits</Copyright>
     <PackageLicenseUrl>http://opensource.org/licenses/MS-PL</PackageLicenseUrl>
-    <PackageIconUrl>https://github.com/TBertuzzi/Xamarin.Forms.BehaviorsPack/blob/master/Resources/behaviorIcon.png?raw=true</PackageIconUrl>
-    <PackageProjectUrl>https://github.com/TBertuzzi/Xamarin.Forms.BehaviorsPack</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/TBertuzzi/Xamarin.Forms.BehaviorsPack</RepositoryUrl>
+    <PackageIconUrl>https://github.com/TBertuzzi/Xamarin.Forms.BehaviorValidationPack/blob/master/Resources/behaviorIcon.png?raw=true</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/TBertuzzi/Xamarin.Forms.BehaviorValidationPack</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TBertuzzi/Xamarin.Forms.BehaviorValidationPack</RepositoryUrl>
     <PackageTags>xamarin xamarin.forms xamarin forms validation validators behavior behaviors</PackageTags>
-    <AssemblyVersion>1.0.0.4</AssemblyVersion>
-    <FileVersion>1.0.0.4</FileVersion>
+    <AssemblyVersion>1.0.0.5</AssemblyVersion>
+    <FileVersion>1.0.0.5</FileVersion>
     <Version>1.0.0</Version>
     <PackageId>Xamarin.Forms.BehaviorValidationPack</PackageId>
     <Product>Xamarin.Forms.BehaviorValidationPack</Product>
