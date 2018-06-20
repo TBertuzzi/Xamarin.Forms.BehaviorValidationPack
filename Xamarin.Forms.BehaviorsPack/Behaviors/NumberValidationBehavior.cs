@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Xamarin.Forms.BehaviorsPack.Behaviors
+namespace Xamarin.Forms.BehaviorsPack
 {
     public class NumberValidationBehavior : Behavior<Entry>
     {

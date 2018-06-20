@@ -17,7 +17,7 @@
             </Entry.Behaviors>
         </Entry>
 
-        <Label Text="DOB" FontSize="Small" />
+        <Label Text="Date" FontSize="Small" />
         <DatePicker >
             <DatePicker.Behaviors>
                 <behaviorPack:DateValidationBehavior/>
@@ -47,8 +47,33 @@
         <Label Text="Phone Number" FontSize="Small" />
         <Entry  Placeholder="Enter 10 digit phone number" >
             <Entry.Behaviors>
-                <behaviorPack:MaxLengthValidatorBehavior  MaxLength="10"/>
                 <behaviorPack:NumberValidationBehavior />
+                <behaviorPack:MaskedBehavior Mask="(XX)XXXX-XXXX" />
+            </Entry.Behaviors>
+        </Entry>
+        <Label Text="CPF" FontSize="Small" />
+        <Entry  Placeholder="Enter CPF" >
+            <Entry.Behaviors>
+                <behaviorPack:CPFValidatorBehavior />
+                <behaviorPack:MaskedBehavior Mask="XXX.XXX.XXX-XX" />
+            </Entry.Behaviors>
+        </Entry>
+        <Label Text="CEP" FontSize="Small" />
+        <Entry  Placeholder="Enter CEP" >
+            <Entry.Behaviors>
+                <behaviorPack:CEPValidatorBehavior />
+                <behaviorPack:MaskedBehavior Mask="XXXXX-XXX" />
+            </Entry.Behaviors>
+        </Entry>
+        <Entry  Placeholder="Enter CNPJ" >
+            <Entry.Behaviors>
+                <behaviorPack:CNPJValidatorBehavior />
+                <behaviorPack:MaskedBehavior Mask="XX.XXX.XXX/XXXX-XX" />
+            </Entry.Behaviors>
+        </Entry>
+        <Entry  Placeholder="Enter CNPJ or CPF" >
+            <Entry.Behaviors>
+                <behaviorPack:CPFCNPJValidatorBehavior />
             </Entry.Behaviors>
         </Entry>
     </StackLayout>

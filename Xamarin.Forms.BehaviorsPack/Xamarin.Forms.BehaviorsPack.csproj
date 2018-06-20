@@ -2,6 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>tbertuzzi</Authors>
+    <Company>KBits</Company>
+    <Description>Useful behaviors for field validation</Description>
+    <Copyright>Copyright ©2018 KBits</Copyright>
+    <PackageLicenseUrl>http://opensource.org/licenses/MS-PL</PackageLicenseUrl>
+    <PackageIconUrl>https://github.com/TBertuzzi/Xamarin.Forms.BehaviorsPack/blob/master/Resources/behaviorIcon.png?raw=true</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/TBertuzzi/Xamarin.Forms.BehaviorsPack</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TBertuzzi/Xamarin.Forms.BehaviorsPack</RepositoryUrl>
+    <PackageTags>xamarin xamarin.forms xamarin forms validation validators behavior behaviors</PackageTags>
+    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+    <FileVersion>1.0.0.2</FileVersion>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>

@@ -10,6 +10,10 @@ namespace Xamarin.Forms.BehaviorsPack
         public static bool CepValidator(string cep)
         {
             string cepRegex = @"^\d{5}-\d{3}$";
+
+            if (string.IsNullOrEmpty(cep))
+                return true;
+
             return (Regex.IsMatch(cep, cepRegex, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)));
         }
 
@@ -51,18 +55,27 @@ namespace Xamarin.Forms.BehaviorsPack
 
         internal static bool CnpjValidator(string cnpj)
         {
-            string passwordRegex = @"/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/";
-            return (Regex.IsMatch(cnpj, passwordRegex));
+            if (string.IsNullOrEmpty(cnpj))
+                return true;
+
+            string cnpjRegex = @"(^(\d{2}.\d{3}.\d{3}/\d{4}-\d{2})|(\d{14})$)";
+            return (Regex.IsMatch(cnpj, cnpjRegex));
         }
 
         internal static bool CpfCnpjValidator(string cpfCnpj)
         {
-            string passwordRegex = @"([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})";
-            return (Regex.IsMatch(cpfCnpj, passwordRegex));
+            if (string.IsNullOrEmpty(cpfCnpj))
+                return true;
+
+            string cpfCnpjRegex = @"([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})";
+            return (Regex.IsMatch(cpfCnpj, cpfCnpjRegex));
         }
 
         public static bool EmailValidator(string email)
         {
+            if (string.IsNullOrEmpty(email))
+                return true;
+
             string emailRegex = @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
          @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$";
 
@@ -73,6 +86,9 @@ namespace Xamarin.Forms.BehaviorsPack
 
         public static bool DateValidator(DateTime date)
         {
+            if(date == null)
+                return true;
+
             DateTime value = date;
             int year = DateTime.Now.Year;
             int selyear = value.Year;
@@ -88,6 +104,9 @@ namespace Xamarin.Forms.BehaviorsPack
 
         public static bool PasswordValidator(string password)
         {
+            if (string.IsNullOrEmpty(password))
+                return true;
+
             string passwordRegex = @"^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$";
             return (Regex.IsMatch(password, passwordRegex));
         }
