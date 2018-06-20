@@ -12,9 +12,9 @@
     <PackageProjectUrl>https://github.com/TBertuzzi/Xamarin.Forms.BehaviorValidationPack</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TBertuzzi/Xamarin.Forms.BehaviorValidationPack</RepositoryUrl>
     <PackageTags>xamarin xamarin.forms xamarin forms validation validators behavior behaviors</PackageTags>
-    <AssemblyVersion>1.0.0.5</AssemblyVersion>
-    <FileVersion>1.0.0.5</FileVersion>
-    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0.6</AssemblyVersion>
+    <FileVersion>1.0.0.6</FileVersion>
+    <Version>1.0.1</Version>
     <PackageId>Xamarin.Forms.BehaviorValidationPack</PackageId>
     <Product>Xamarin.Forms.BehaviorValidationPack</Product>
   </PropertyGroup>

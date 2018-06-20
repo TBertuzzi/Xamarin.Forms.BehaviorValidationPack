@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:BehaviorsPackSample"
-             xmlns:behaviorPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
+             xmlns:behaviorPack="clr-namespace:Xamarin.Forms.BehaviorValidationPack;assembly=Xamarin.Forms.BehaviorValidationPack"
              x:Class="BehaviorsPackSample.MainPage">
 
     <StackLayout Padding="0,20,0,0">
@@ -12,7 +12,7 @@
         <Label Text="Age" FontSize="Small" />
         <Entry Placeholder="Age" FontSize="Small">
             <Entry.Behaviors>
-                <behaviorPack:MaxLengthValidatorBehavior  MaxLength="2"/>
+                <behaviorPack:MaxLengthValidationBehavior  MaxLength="2"/>
                 <behaviorPack:NumberValidationBehavior/>
             </Entry.Behaviors>
         </Entry>
@@ -27,7 +27,7 @@
         <Label Text="Email" FontSize="Small" />
         <Entry Placeholder="Enter Your Email ID" >
             <Entry.Behaviors>
-                <behaviorPack:EmailValidatorBehavior />
+                <behaviorPack:EmailValidationBehavior />
             </Entry.Behaviors>
         </Entry>
         <Label Text="Password" FontSize="Small" />
@@ -54,26 +54,28 @@
         <Label Text="CPF" FontSize="Small" />
         <Entry  Placeholder="Enter CPF" >
             <Entry.Behaviors>
-                <behaviorPack:CPFValidatorBehavior />
+                <behaviorPack:CPFValidationBehavior />
                 <behaviorPack:MaskedBehavior Mask="XXX.XXX.XXX-XX" />
             </Entry.Behaviors>
         </Entry>
         <Label Text="CEP" FontSize="Small" />
         <Entry  Placeholder="Enter CEP" >
             <Entry.Behaviors>
-                <behaviorPack:CEPValidatorBehavior />
+                <behaviorPack:CEPValidationBehavior />
                 <behaviorPack:MaskedBehavior Mask="XXXXX-XXX" />
             </Entry.Behaviors>
         </Entry>
+        <Label Text="CNPJ" FontSize="Small" />
         <Entry  Placeholder="Enter CNPJ" >
             <Entry.Behaviors>
-                <behaviorPack:CNPJValidatorBehavior />
+                <behaviorPack:CNPJValidationBehavior />
                 <behaviorPack:MaskedBehavior Mask="XX.XXX.XXX/XXXX-XX" />
             </Entry.Behaviors>
         </Entry>
+        <Label Text="CNPJ or CPF" FontSize="Small" />
         <Entry  Placeholder="Enter CNPJ or CPF" >
             <Entry.Behaviors>
-                <behaviorPack:CPFCNPJValidatorBehavior />
+                <behaviorPack:CPFCNPJValidationBehavior />
             </Entry.Behaviors>
         </Entry>
     </StackLayout>

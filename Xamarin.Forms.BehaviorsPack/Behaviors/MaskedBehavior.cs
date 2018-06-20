@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Xamarin.Forms.BehaviorsPack
+namespace Xamarin.Forms.BehaviorValidationPack
 {
     public class MaskedBehavior : Behavior<Entry>
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Xamarin.Forms.BehaviorsPack
+namespace Xamarin.Forms.BehaviorValidationPack
 {
     //at least 8 characters
     //at least 1 numeric character
