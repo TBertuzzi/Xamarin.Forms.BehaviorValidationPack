@@ -21,6 +21,7 @@
         <DatePicker >
             <DatePicker.Behaviors>
                 <behaviorPack:DateValidationBehavior/>
+                <behaviorPack:MaskedBehavior Mask="XX/XX/XXXX" />
             </DatePicker.Behaviors>
         </DatePicker>
 
