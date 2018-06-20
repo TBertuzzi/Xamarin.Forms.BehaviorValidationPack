@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BehaviorsPackSample"
+             xmlns:behaviorPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
+             x:Class="BehaviorsPackSample.MainPage">
+
+    <StackLayout Padding="0,20,0,0">
+
+        <Label Text="Name" FontSize="Small" />
+        <Entry Placeholder="Enter Your Name" />
+        <Label Text="Age" FontSize="Small" />
+        <Entry Placeholder="Age" FontSize="Small">
+            <Entry.Behaviors>
+                <behaviorPack:MaxLengthValidatorBehavior  MaxLength="2"/>
+                <behaviorPack:NumberValidationBehavior/>
+            </Entry.Behaviors>
+        </Entry>
+
+        <Label Text="DOB" FontSize="Small" />
+        <DatePicker >
+            <DatePicker.Behaviors>
+                <behaviorPack:DateValidationBehavior/>
+            </DatePicker.Behaviors>
+        </DatePicker>
+
+        <Label Text="Email" FontSize="Small" />
+        <Entry Placeholder="Enter Your Email ID" >
+            <Entry.Behaviors>
+                <behaviorPack:EmailValidatorBehavior />
+            </Entry.Behaviors>
+        </Entry>
+        <Label Text="Password" FontSize="Small" />
+        <Entry x:Name="txtpassword" IsPassword="True" Placeholder="Enter Your Password" >
+            <Entry.Behaviors>
+                <behaviorPack:PasswordValidationBehavior />
+            </Entry.Behaviors>
+        </Entry>
+
+        <Label Text="Confirm Password" FontSize="Small" />
+        <Entry IsPassword="True" Placeholder="Enter same as above" >
+            <Entry.Behaviors>
+                <behaviorPack:PasswordValidationBehavior />
+                <behaviorPack:CompareValidationBehavior BindingContext="{x:Reference txtpassword}" Text="{Binding Text}"/>
+            </Entry.Behaviors>
+        </Entry>
+        <Label Text="Phone Number" FontSize="Small" />
+        <Entry  Placeholder="Enter 10 digit phone number" >
+            <Entry.Behaviors>
+                <behaviorPack:MaxLengthValidatorBehavior  MaxLength="10"/>
+                <behaviorPack:NumberValidationBehavior />
+            </Entry.Behaviors>
+        </Entry>
+    </StackLayout>
+
+</ContentPage>
