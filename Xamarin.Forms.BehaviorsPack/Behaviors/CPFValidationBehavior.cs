@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Xamarin.Forms.BehaviorsPack
 {
-    public class CNPJValidatorBehavior : Behavior<Entry>
+    public class CPFValidationBehavior : Behavior<Entry>
     {
 
 
@@ -23,7 +23,7 @@ namespace Xamarin.Forms.BehaviorsPack
 
         void Bindable_Unfocused(object sender, FocusEventArgs e)
         {
-            bool IsValid = Validators.CnpjValidator(((Entry)sender).Text);
+            bool IsValid = Validators.CpfValidator(((Entry)sender).Text);
             ((Entry)sender).TextColor = IsValid ? Color.Default : Color.Red;
         }
     }

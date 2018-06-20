@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Xamarin.Forms.BehaviorsPack
 {
-    public class MaxLengthValidatorBehavior : Behavior<Entry>
+    public class MaxLengthValidationBehavior : Behavior<Entry>
     {
         public static readonly BindableProperty MaxLengthProperty = 
-            BindableProperty.Create("MaxLength", typeof(int), typeof(MaxLengthValidatorBehavior), 0);
+            BindableProperty.Create("MaxLength", typeof(int), typeof(MaxLengthValidationBehavior), 0);
 
         public int MaxLength
         {

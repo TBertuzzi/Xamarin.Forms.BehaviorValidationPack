@@ -4,9 +4,8 @@ using System.Text;
 
 namespace Xamarin.Forms.BehaviorsPack
 {
-    public class CPFValidatorBehavior : Behavior<Entry>
+    public class EmailValidationBehavior : Behavior<Entry>
     {
-
 
         protected override void OnAttachedTo(Entry bindable)
         {
@@ -23,8 +22,11 @@ namespace Xamarin.Forms.BehaviorsPack
 
         void Bindable_Unfocused(object sender, FocusEventArgs e)
         {
-            bool IsValid = Validators.CpfValidator(((Entry)sender).Text);
+            bool IsValid = false;
+            IsValid = Validators.EmailValidator(((Entry)sender).Text);
             ((Entry)sender).TextColor = IsValid ? Color.Default : Color.Red;
+
         }
+
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Xamarin.Forms.BehaviorsPack
 {
-    public class CEPValidatorBehavior : Behavior<Entry>
+    public class CEPValidationBehavior : Behavior<Entry>
     {
         protected override void OnAttachedTo(Entry bindable)
         {
