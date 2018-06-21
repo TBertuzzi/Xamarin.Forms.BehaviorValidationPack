@@ -15,7 +15,7 @@
 
 **Platform Support**
 
-MultiSelectListView is a .NET Standard 2.0 library.Its only dependency is the Xamarin.Forms
+Xamarin.Forms.BehaviorValidationPack is a .NET Standard 2.0 library.Its only dependency is the Xamarin.Forms
 
 ## Setup / Usage
 
