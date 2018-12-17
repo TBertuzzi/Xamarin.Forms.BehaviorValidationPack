@@ -23,7 +23,7 @@ namespace Xamarin.Forms.BehaviorValidationPack
 
         void Bindable_Unfocused(object sender, FocusEventArgs e)
         {
-            bool IsValid = Validators.CnpjValidator(((Entry)sender).Text);
+            bool IsValid = Validators.CnpjValidator(((Entry)sender).ValidatedText());
             ((Entry)sender).TextColor = IsValid ? Color.Default : Color.Red;
         }
     }

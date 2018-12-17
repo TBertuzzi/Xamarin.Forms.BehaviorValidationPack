@@ -110,5 +110,7 @@ namespace Xamarin.Forms.BehaviorValidationPack
             string passwordRegex = @"^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$";
             return (Regex.IsMatch(password, passwordRegex));
         }
+
+       
     }
 }

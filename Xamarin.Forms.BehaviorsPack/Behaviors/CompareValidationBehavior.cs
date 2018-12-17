@@ -38,7 +38,7 @@ namespace Xamarin.Forms.BehaviorValidationPack
         void Bindable_Unfocused(object sender, FocusEventArgs e)
         {
             bool IsValid = false;
-            IsValid = ((Entry)sender).Text == Text;
+            IsValid = ((Entry)sender).ValidatedText() == Text;
 
             ((Entry)sender).TextColor = IsValid ? Color.Default : Color.Red;
         }
