@@ -10,7 +10,7 @@
 
 |Name|Info|
 | ------------------- | :------------------: |
-|Xamarin.Forms.BehaviorValidationPack|[![NuGet](https://img.shields.io/badge/nuget-1.0.1-blue.svg)](https://www.nuget.org/packages/Xamarin.Forms.BehaviorValidationPack/)|
+|Xamarin.Forms.BehaviorValidationPack|[![NuGet](https://buildstats.info/nuget/Xamarin.Forms.BehaviorValidationPack)](https://www.nuget.org/packages/Xamarin.Forms.BehaviorValidationPack/)|
 
 
 **Platform Support**
