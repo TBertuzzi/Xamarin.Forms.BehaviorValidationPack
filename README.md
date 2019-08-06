@@ -78,6 +78,8 @@ Masks
 
 * MaskedBehavior : Creates a custom mask on an entry.
 
+Based on MaskedBehavior by [Adam Pedley](https://github.com/adamped) (https://xamarinhelp.com/masked-entry-in-xamarin-forms/).
+
 
 ```csharp
    <behaviorPack:MaskedBehavior Mask="XX/XX/XXXX" />
