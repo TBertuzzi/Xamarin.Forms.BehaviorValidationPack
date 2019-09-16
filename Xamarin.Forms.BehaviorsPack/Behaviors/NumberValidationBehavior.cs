@@ -6,9 +6,12 @@ namespace Xamarin.Forms.BehaviorValidationPack
 {
     public class NumberValidationBehavior : Behavior<Entry>
     {
+        private static Color DefaultColor = Color.Default;
+
         protected override void OnAttachedTo(Entry entry)
         {
             entry.TextChanged += OnEntryTextChanged;
+            DefaultColor = entry.TextColor;
             base.OnAttachedTo(entry);
         }
 
@@ -24,7 +27,7 @@ namespace Xamarin.Forms.BehaviorValidationPack
 
             bool isValid = int.TryParse(args.NewTextValue, out result);
 
-            ((Entry)sender).TextColor = isValid ? Color.Default : Color.Red;
+            ((Entry)sender).TextColor = isValid ? DefaultColor : Color.Red;
         }
     }
 }

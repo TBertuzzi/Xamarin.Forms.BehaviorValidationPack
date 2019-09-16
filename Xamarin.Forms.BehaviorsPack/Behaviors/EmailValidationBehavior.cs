@@ -6,10 +6,12 @@ namespace Xamarin.Forms.BehaviorValidationPack
 {
     public class EmailValidationBehavior : Behavior<Entry>
     {
+        private static Color DefaultColor = Color.Default;
 
         protected override void OnAttachedTo(Entry bindable)
         {
             bindable.Unfocused += Bindable_Unfocused;
+            DefaultColor = bindable.TextColor;
             base.OnAttachedTo(bindable);
         }
 
@@ -24,7 +26,7 @@ namespace Xamarin.Forms.BehaviorValidationPack
         {
             bool IsValid = false;
             IsValid = Validators.EmailValidator(((Entry)sender).ValidatedText());
-            ((Entry)sender).TextColor = IsValid ? Color.Default : Color.Red;
+            ((Entry)sender).TextColor = IsValid ? DefaultColor : Color.Red;
 
         }
 

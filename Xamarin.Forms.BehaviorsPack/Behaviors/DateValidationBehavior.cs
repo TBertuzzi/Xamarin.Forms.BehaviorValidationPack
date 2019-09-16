@@ -6,9 +6,12 @@ namespace Xamarin.Forms.BehaviorValidationPack
 {
     public class DateValidationBehavior : Behavior<DatePicker>
     {
+        private static Color DefaultColor = Color.Default;
+
         protected override void OnAttachedTo(DatePicker datepicker)
         {
             datepicker.DateSelected += Datepicker_DateSelected;
+            DefaultColor = datepicker.TextColor;
             base.OnAttachedTo(datepicker);
         }
 
@@ -16,7 +19,7 @@ namespace Xamarin.Forms.BehaviorValidationPack
         {
 
             bool isValid = Validators.DateValidator(e.NewDate);
-           ((DatePicker)sender).BackgroundColor = isValid ? Color.Default : Color.Red;
+           ((DatePicker)sender).BackgroundColor = isValid ? DefaultColor : Color.Red;
         }
 
         protected override void OnDetachingFrom(DatePicker datepicker)

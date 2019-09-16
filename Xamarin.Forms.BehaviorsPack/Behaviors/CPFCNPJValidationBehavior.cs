@@ -6,11 +6,13 @@ namespace Xamarin.Forms.BehaviorValidationPack
 {
     public class CPFCNPJValidationBehavior : Behavior<Entry>
     {
-
+        private static Color DefaultColor = Color.Default;
 
         protected override void OnAttachedTo(Entry bindable)
         {
             bindable.Unfocused += Bindable_Unfocused;
+            DefaultColor = bindable.TextColor;
+
             base.OnAttachedTo(bindable);
         }
 
@@ -24,7 +26,7 @@ namespace Xamarin.Forms.BehaviorValidationPack
         void Bindable_Unfocused(object sender, FocusEventArgs e)
         {
             bool IsValid = Validators.CpfCnpjValidator(((Entry)sender).ValidatedText());
-            ((Entry)sender).TextColor = IsValid ? Color.Default : Color.Red;
+            ((Entry)sender).TextColor = IsValid ? DefaultColor : Color.Red;
         }
     }
 }

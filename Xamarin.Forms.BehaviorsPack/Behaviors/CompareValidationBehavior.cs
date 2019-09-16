@@ -7,6 +7,8 @@ namespace Xamarin.Forms.BehaviorValidationPack
     public class CompareValidationBehavior : Behavior<Entry>
     {
 
+        private static Color DefaultColor = Color.Default;
+
         public static BindableProperty TextProperty =
             BindableProperty.Create<CompareValidationBehavior, string>(tc => tc.Text, string.Empty, BindingMode.TwoWay);
 
@@ -26,6 +28,7 @@ namespace Xamarin.Forms.BehaviorValidationPack
         protected override void OnAttachedTo(Entry bindable)
         {
             bindable.Unfocused += Bindable_Unfocused;
+            DefaultColor = bindable.TextColor;
             base.OnAttachedTo(bindable);
         }
 
@@ -40,7 +43,7 @@ namespace Xamarin.Forms.BehaviorValidationPack
             bool IsValid = false;
             IsValid = ((Entry)sender).ValidatedText() == Text;
 
-            ((Entry)sender).TextColor = IsValid ? Color.Default : Color.Red;
+            ((Entry)sender).TextColor = IsValid ? DefaultColor : Color.Red;
         }
     }
     

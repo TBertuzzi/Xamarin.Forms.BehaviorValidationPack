@@ -14,10 +14,12 @@ namespace Xamarin.Forms.BehaviorValidationPack
     {
         const string passwordRegex = @"^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$";
 
+        private static Color DefaultColor = Color.Default;
 
         protected override void OnAttachedTo(Entry bindable)
         {
             bindable.Unfocused += Bindable_Unfocused;
+            DefaultColor = bindable.TextColor;
             base.OnAttachedTo(bindable);
         }
 
@@ -25,7 +27,7 @@ namespace Xamarin.Forms.BehaviorValidationPack
         {
             bool IsValid = false;
             IsValid = Validators.PasswordValidator(((Entry)sender).ValidatedText());
-            ((Entry)sender).TextColor = IsValid ? Color.Default : Color.Red;
+            ((Entry)sender).TextColor = IsValid ? DefaultColor : Color.Red;
         }
 
         protected override void OnDetachingFrom(Entry bindable)

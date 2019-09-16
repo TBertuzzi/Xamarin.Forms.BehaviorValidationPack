@@ -147,12 +147,12 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.778463" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\BehaviorsPackSample\BehaviorsPackSample.csproj">
-      <Project>{17ACC5D4-05E1-4AFF-991A-5A652B95EDA2}</Project>
+      <Project>{16E8C4D6-B673-4A24-900A-A2FA0B0B86DA}</Project>
       <Name>BehaviorsPackSample</Name>
     </ProjectReference>
   </ItemGroup>

@@ -2,12 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:BehaviorsPackSample"
+             BackgroundColor="Black"
              xmlns:behaviorPack="clr-namespace:Xamarin.Forms.BehaviorValidationPack;assembly=Xamarin.Forms.BehaviorValidationPack"
              x:Class="BehaviorsPackSample.MainPage">
 
     <StackLayout Padding="0,20,0,0">
 
-        <Label Text="Name" FontSize="Small" />
+        <!--<Label Text="Name" FontSize="Small" />
         <Entry Placeholder="Enter Your Name" />
         <Label Text="Age" FontSize="Small" />
         <Entry Placeholder="Age" FontSize="Small">
@@ -65,7 +66,7 @@
                 <behaviorPack:CEPValidationBehavior />
                 <behaviorPack:MaskedBehavior Mask="XXXXX-XXX" />
             </Entry.Behaviors>
-        </Entry>
+        </Entry>-->
         <Label Text="CNPJ" FontSize="Small" />
         <Entry  Placeholder="Enter CNPJ" >
             <Entry.Behaviors>
@@ -74,7 +75,7 @@
             </Entry.Behaviors>
         </Entry>
         <Label Text="CNPJ or CPF" FontSize="Small" />
-        <Entry  Placeholder="Enter CNPJ or CPF" >
+        <Entry TextColor="Green" Placeholder="Enter CNPJ or CPF" >
             <Entry.Behaviors>
                 <behaviorPack:CPFCNPJValidationBehavior />
             </Entry.Behaviors>
