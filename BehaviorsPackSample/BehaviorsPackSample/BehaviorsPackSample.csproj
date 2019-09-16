@@ -6,8 +6,6 @@
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.778463" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Xamarin.Forms.BehaviorsPack\Xamarin.Forms.BehaviorValidationPack.csproj" />
+    <PackageReference Include="Xamarin.Forms.BehaviorValidationPack" Version="1.1.0" />
   </ItemGroup>
 </Project>
