@@ -19,16 +19,20 @@ namespace Xamarin.Forms.BehaviorValidationPack
 
         public static bool CpfValidator(string cpf)
         {
+            if (string.IsNullOrEmpty(cpf))
+                return false;
+            
+            cpf = cpf.Replace(".", "").Replace("-", "");
+            cpf = cpf.Trim();
+            if (cpf.Length != 11)
+                return false;
+            
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             string tempCpf;
             string digito;
             int soma;
             int resto;
-            cpf = cpf.Trim();
-            cpf = cpf.Replace(".", "").Replace("-", "");
-            if (cpf.Length != 11)
-                return false;
             tempCpf = cpf.Substring(0, 9);
             soma = 0;
 
@@ -49,17 +53,48 @@ namespace Xamarin.Forms.BehaviorValidationPack
                 resto = 0;
             else
                 resto = 11 - resto;
-            digito = digito + resto.ToString();
+            digito += resto.ToString();
             return cpf.EndsWith(digito);
         }
 
         internal static bool CnpjValidator(string cnpj)
         {
-            if (string.IsNullOrEmpty(cnpj))
-                return true;
+            if (string.IsNullOrEmpty(Cnpj))
+                return false;
 
-            string cnpjRegex = @"(^(\d{2}.\d{3}.\d{3}/\d{4}-\d{2})|(\d{14})$)";
-            return (Regex.IsMatch(cnpj, cnpjRegex));
+            Cnpj = Cnpj.Replace(".", "").Replace("-", "").Replace("/", "");
+            Cnpj = Cnpj.Trim();
+            if (Cnpj.Length != 14)
+                return false;
+
+            int[] multiplicador1 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador2 = new int[13] { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int soma;
+            int resto;
+            string digito;
+            string tempCnpj;
+
+            tempCnpj = Cnpj.Substring(0, 12);
+            soma = 0;
+            for (int i = 0; i < 12; i++)
+                soma += int.Parse(tempCnpj[i].ToString()) * multiplicador1[i];
+            resto = (soma % 11);
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+            digito = resto.ToString();
+            tempCnpj += digito;
+            soma = 0;
+            for (int i = 0; i < 13; i++)
+                soma += int.Parse(tempCnpj[i].ToString()) * multiplicador2[i];
+            resto = (soma % 11);
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+            digito += resto.ToString();
+            return Cnpj.EndsWith(digito);
         }
 
         internal static bool CpfCnpjValidator(string cpfCnpj)
@@ -80,8 +115,6 @@ namespace Xamarin.Forms.BehaviorValidationPack
          @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$";
 
             return (Regex.IsMatch(email, emailRegex, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)));
-
-
         }
 
         public static bool DateValidator(DateTime date)
