@@ -19,8 +19,9 @@ namespace Xamarin.Forms.BehaviorValidationPack
 
         public static bool CpfValidator(string cpf)
         {
-            if (string.IsNullOrEmpty(cpf))
+            if (string.IsNullOrEmpty(cpf)) {
                 return false;
+            }
             
             cpf = cpf.Replace(".", "").Replace("-", "");
             cpf = cpf.Trim();
@@ -59,13 +60,15 @@ namespace Xamarin.Forms.BehaviorValidationPack
 
         internal static bool CnpjValidator(string cnpj)
         {
-            if (string.IsNullOrEmpty(Cnpj))
+            if (string.IsNullOrEmpty(Cnpj)) {
                 return false;
+            }
 
             Cnpj = Cnpj.Replace(".", "").Replace("-", "").Replace("/", "");
             Cnpj = Cnpj.Trim();
-            if (Cnpj.Length != 14)
+            if (Cnpj.Length != 14) {
                 return false;
+            }
 
             int[] multiplicador1 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
             int[] multiplicador2 = new int[13] { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -76,8 +79,9 @@ namespace Xamarin.Forms.BehaviorValidationPack
 
             tempCnpj = Cnpj.Substring(0, 12);
             soma = 0;
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 12; i++) {
                 soma += int.Parse(tempCnpj[i].ToString()) * multiplicador1[i];
+            }
             resto = (soma % 11);
             if (resto < 2)
                 resto = 0;
@@ -86,8 +90,9 @@ namespace Xamarin.Forms.BehaviorValidationPack
             digito = resto.ToString();
             tempCnpj += digito;
             soma = 0;
-            for (int i = 0; i < 13; i++)
+            for (int i = 0; i < 13; i++) {
                 soma += int.Parse(tempCnpj[i].ToString()) * multiplicador2[i];
+            }
             resto = (soma % 11);
             if (resto < 2)
                 resto = 0;
