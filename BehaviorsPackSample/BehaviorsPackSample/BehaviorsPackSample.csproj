@@ -8,5 +8,6 @@
     <PackageReference Include="Xamarin.Forms" Version="4.7.0.1239" />
     <PackageReference Include="Xamarin.Forms.BehaviorValidationPack" Version="1.1.0" />
     <PackageReference Include="XF.Material" Version="1.6.5" />
+    <PackageReference Include="Xamarin.Forms.BehaviorValidationPack.XFMaterial" Version="1.0.0" />
   </ItemGroup>
 </Project>
