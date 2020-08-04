@@ -11,6 +11,7 @@
 |Name|Info|
 | ------------------- | :------------------: |
 |Xamarin.Forms.BehaviorValidationPack|[![NuGet](https://buildstats.info/nuget/Xamarin.Forms.BehaviorValidationPack)](https://www.nuget.org/packages/Xamarin.Forms.BehaviorValidationPack/)|
+|Xamarin.Forms.BehaviorValidationPack.XFMaterial|[![NuGet](https://buildstats.info/nuget/Xamarin.Forms.BehaviorValidationPack.XFMaterial)](https://www.nuget.org/packages/Xamarin.Forms.BehaviorValidationPack.XFMaterial/)|
 
 
 **Platform Support**
@@ -47,6 +48,29 @@ Behavior
                 <behaviorPack:NumberValidationBehavior/>
             </Entry.Behaviors>
         </Entry>
+
+```
+
+Behavior for XF-Material-Library
+
+
+```csharp
+
+        <material:MaterialLabel Text="Date" FontSize="Small" />
+        <DatePicker >
+            <DatePicker.Behaviors>
+                <behaviorPack:DateValidationBehavior/>
+                <behaviorPack:MaskedBehavior Mask="XX/XX/XXXX" />
+            </DatePicker.Behaviors>
+        </DatePicker>
+        
+         <material:MaterialLabel Text="Age" FontSize="Small" />
+        <material:MaterialTextField Placeholder="Age" FontSize="Small">
+            <material:MaterialTextField.Behaviors>
+                <behaviorPack:MaxLengthValidationBehavior  MaxLength="2"/>
+                <behaviorPack:NumberValidationBehavior/>
+            </material:MaterialTextField.Behaviors>
+        </material:MaterialTextField>
 
 ```
 
