@@ -2,11 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.0.3</Version>
+    <Company>KBits</Company>
+    <Description>Useful behaviors for XF Material field validation</Description>
+    <Copyright>Copyright ©2020 KBits</Copyright>
+    <PackageProjectUrl>https://github.com/TBertuzzi/Xamarin.Forms.BehaviorValidationPack</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TBertuzzi/Xamarin.Forms.BehaviorValidationPack</RepositoryUrl>
+    <PackageTags>xamarin xamarin.forms xamarin forms validation validators behavior behaviors material</PackageTags>
+    <PackageReleaseNotes>First version</PackageReleaseNotes>
+    <PackageIcon>behaviorIcon.png</PackageIcon>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>tbertuzzi</Authors>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\BehaviorValidationPack.Core\BehaviorValidationPack.Core.csproj" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.530" />
     <PackageReference Include="XF.Material" Version="1.6.5" />
@@ -14,5 +22,11 @@
   <ItemGroup>
     <Folder Include="Behaviors\" />
     <Folder Include="Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Resources\behaviorIcon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 </Project>

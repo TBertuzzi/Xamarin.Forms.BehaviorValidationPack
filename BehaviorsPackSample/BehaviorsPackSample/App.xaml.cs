@@ -10,6 +10,7 @@ namespace BehaviorsPackSample
 		public App ()
 		{
 			InitializeComponent();
+			XF.Material.Forms.Material.Init(this);
 
 			MainPage = new MainPage();
 		}

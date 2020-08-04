@@ -12,9 +12,9 @@
     <PackageProjectUrl>https://github.com/TBertuzzi/Xamarin.Forms.BehaviorValidationPack</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TBertuzzi/Xamarin.Forms.BehaviorValidationPack</RepositoryUrl>
     <PackageTags>xamarin xamarin.forms xamarin forms validation validators behavior behaviors</PackageTags>
-    <AssemblyVersion>1.2.0.0</AssemblyVersion>
-    <FileVersion>1.2.0.0</FileVersion>
-    <Version>1.2.0</Version>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
+    <FileVersion>1.1.1.0</FileVersion>
+    <Version>1.1.0</Version>
     <PackageId>Xamarin.Forms.BehaviorValidationPack</PackageId>
     <Product>Xamarin.Forms.BehaviorValidationPack</Product>
     <PackageReleaseNotes>Update CPNJ e CPF Rules</PackageReleaseNotes>
@@ -25,8 +25,5 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.0.0.709238" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BehaviorValidationPack.Core\BehaviorValidationPack.Core.csproj" />
   </ItemGroup>
 </Project>

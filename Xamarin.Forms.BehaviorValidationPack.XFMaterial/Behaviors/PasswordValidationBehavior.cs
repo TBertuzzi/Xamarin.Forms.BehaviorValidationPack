@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
-using BehaviorValidationPack.Core;
+
 using XF.Material.Forms.UI;
 
 namespace Xamarin.Forms.BehaviorValidationPack.XFMaterial

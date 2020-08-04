@@ -20,6 +20,7 @@ namespace BehaviorsPackSample.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            XF.Material.Droid.Material.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
     }
