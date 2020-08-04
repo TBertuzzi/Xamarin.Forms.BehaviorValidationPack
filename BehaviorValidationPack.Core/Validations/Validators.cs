@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Xamarin.Forms.BehaviorValidationPack
+
+namespace BehaviorValidationPack.Core
 {
     public class Validators
     {
@@ -58,26 +59,26 @@ namespace Xamarin.Forms.BehaviorValidationPack
             return cpf.EndsWith(digito);
         }
 
-        internal static bool CnpjValidator(string cnpj)
+        public static bool CnpjValidator(string cnpj)
         {
-            if (string.IsNullOrEmpty(Cnpj)) {
+            if (string.IsNullOrEmpty(cnpj)) {
                 return false;
             }
 
-            Cnpj = Cnpj.Replace(".", "").Replace("-", "").Replace("/", "");
-            Cnpj = Cnpj.Trim();
-            if (Cnpj.Length != 14) {
+            cnpj = cnpj.Replace(".", "").Replace("-", "").Replace("/", "");
+            cnpj = cnpj.Trim();
+            if (cnpj.Length != 14) {
                 return false;
             }
 
-            int[] multiplicador1 = new int { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
-            int[] multiplicador2 = new int { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador1 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador2 = new int [13]{ 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
             int soma;
             int resto;
             string digito;
             string tempCnpj;
 
-            tempCnpj = Cnpj.Substring(0, 12);
+            tempCnpj = cnpj.Substring(0, 12);
             soma = 0;
             for (int i = 0; i < 12; i++) {
                 soma += int.Parse(tempCnpj[i].ToString()) * multiplicador1[i];
@@ -99,10 +100,10 @@ namespace Xamarin.Forms.BehaviorValidationPack
             else
                 resto = 11 - resto;
             digito += resto.ToString();
-            return Cnpj.EndsWith(digito);
+            return cnpj.EndsWith(digito);
         }
 
-        internal static bool CpfCnpjValidator(string cpfCnpj)
+        public static bool CpfCnpjValidator(string cpfCnpj)
         {
             if (string.IsNullOrEmpty(cpfCnpj))
                 return true;

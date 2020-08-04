@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using BehaviorValidationPack.Core;
+using XF.Material.Forms.UI;
 
-namespace Xamarin.Forms.BehaviorValidationPack
+namespace Xamarin.Forms.BehaviorValidationPack.XFMaterial
 {
-    public class MaskedBehavior : Behavior<Entry>
+    public class MaskedBehavior : Behavior<MaterialTextField>
     {
         private string _mask = "";
         public string Mask
@@ -18,13 +19,13 @@ namespace Xamarin.Forms.BehaviorValidationPack
             }
         }
 
-        protected override void OnAttachedTo(Entry entry)
+        protected override void OnAttachedTo(MaterialTextField entry)
         {
             entry.TextChanged += OnEntryTextChanged;
             base.OnAttachedTo(entry);
         }
 
-        protected override void OnDetachingFrom(Entry entry)
+        protected override void OnDetachingFrom(MaterialTextField entry)
         {
             entry.TextChanged -= OnEntryTextChanged;
             base.OnDetachingFrom(entry);
@@ -50,7 +51,7 @@ namespace Xamarin.Forms.BehaviorValidationPack
 
         private void OnEntryTextChanged(object sender, TextChangedEventArgs args)
         {
-            var entry = sender as Entry;
+            var entry = sender as MaterialTextField;
 
             var text = entry.Text;
 

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using BehaviorValidationPack.Core;
+using XF.Material.Forms.UI;
 
-namespace Xamarin.Forms.BehaviorValidationPack
+namespace Xamarin.Forms.BehaviorValidationPack.XFMaterial
 {
-    public class MaxLengthValidationBehavior : Behavior<Entry>
+    public class MaxLengthValidationBehavior : Behavior<MaterialTextField>
     {
         public static readonly BindableProperty MaxLengthProperty = 
             BindableProperty.Create("MaxLength", typeof(int), typeof(MaxLengthValidationBehavior), 0);
@@ -16,7 +17,7 @@ namespace Xamarin.Forms.BehaviorValidationPack
             set { SetValue(MaxLengthProperty, value); }
         }
 
-        protected override void OnAttachedTo(Entry bindable)
+        protected override void OnAttachedTo(MaterialTextField bindable)
         {
             bindable.TextChanged += bindable_TextChanged;
         }
@@ -25,11 +26,11 @@ namespace Xamarin.Forms.BehaviorValidationPack
         {
 
             if (e.NewTextValue.Length >= MaxLength)
-                ((Entry)sender).Text = e.NewTextValue.Substring(0, MaxLength);
+                ((MaterialTextField)sender).Text = e.NewTextValue.Substring(0, MaxLength);
 
         }
 
-        protected override void OnDetachingFrom(Entry bindable)
+        protected override void OnDetachingFrom(MaterialTextField bindable)
         {
             bindable.TextChanged -= bindable_TextChanged;
 

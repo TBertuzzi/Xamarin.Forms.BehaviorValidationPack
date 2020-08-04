@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using System.Text;
 using BehaviorValidationPack.Core;
+using XF.Material.Forms.UI;
 
-namespace Xamarin.Forms.BehaviorValidationPack
+namespace Xamarin.Forms.BehaviorValidationPack.XFMaterial
 {
-    public class NumberValidationBehavior : Behavior<Entry>
+    public class NumberValidationBehavior : Behavior<MaterialTextField>
     {
         private static Color DefaultColor = Color.Default;
 
-        protected override void OnAttachedTo(Entry entry)
+        protected override void OnAttachedTo(MaterialTextField entry)
         {
             entry.TextChanged += OnEntryTextChanged;
             DefaultColor = entry.TextColor;
             base.OnAttachedTo(entry);
         }
 
-        protected override void OnDetachingFrom(Entry entry)
+        protected override void OnDetachingFrom(MaterialTextField entry)
         {
             entry.TextChanged -= OnEntryTextChanged;
             base.OnDetachingFrom(entry);

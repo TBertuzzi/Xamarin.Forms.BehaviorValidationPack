@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using BehaviorValidationPack.Core;
 
-namespace Xamarin.Forms.BehaviorValidationPack
+using XF.Material.Forms.UI;
+
+namespace Xamarin.Forms.BehaviorValidationPack.XFMaterial
 {
-    public class CompareValidationBehavior : Behavior<Entry>
+    public class CompareValidationBehavior : Behavior<MaterialTextField>
     {
 
         private static Color DefaultColor = Color.Default;
@@ -26,14 +28,14 @@ namespace Xamarin.Forms.BehaviorValidationPack
         }
 
 
-        protected override void OnAttachedTo(Entry bindable)
+        protected override void OnAttachedTo(MaterialTextField bindable)
         {
             bindable.Unfocused += Bindable_Unfocused;
             DefaultColor = bindable.TextColor;
             base.OnAttachedTo(bindable);
         }
 
-        protected override void OnDetachingFrom(Entry bindable)
+        protected override void OnDetachingFrom(MaterialTextField bindable)
         {
             bindable.Unfocused -= Bindable_Unfocused;
             base.OnDetachingFrom(bindable);
@@ -42,7 +44,7 @@ namespace Xamarin.Forms.BehaviorValidationPack
         void Bindable_Unfocused(object sender, FocusEventArgs e)
         {
             bool IsValid = false;
-            IsValid = ((Entry)sender).ValidatedText() == Text;
+            IsValid = ((MaterialTextField)sender).ValidatedText() == Text;
 
             ((Entry)sender).TextColor = IsValid ? DefaultColor : Color.Red;
         }

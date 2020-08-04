@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using BehaviorValidationPack.Core;
+using XF.Material.Forms.UI;
 
-namespace Xamarin.Forms.BehaviorValidationPack
+namespace Xamarin.Forms.BehaviorValidationPack.XFMaterial
 {
     public class DateValidationBehavior : Behavior<DatePicker>
     {

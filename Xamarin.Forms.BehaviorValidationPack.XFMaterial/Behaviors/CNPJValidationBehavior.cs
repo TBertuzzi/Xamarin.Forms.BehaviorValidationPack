@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 using BehaviorValidationPack.Core;
+using XF.Material.Forms.UI;
 
-namespace Xamarin.Forms.BehaviorValidationPack
+namespace Xamarin.Forms.BehaviorValidationPack.XFMaterial
 {
-    public class EmailValidationBehavior : Behavior<Entry>
+    public class CNPJValidationBehavior : Behavior<MaterialTextField>
     {
+
         private static Color DefaultColor = Color.Default;
 
-        protected override void OnAttachedTo(Entry bindable)
+        protected override void OnAttachedTo(MaterialTextField bindable)
         {
             bindable.Unfocused += Bindable_Unfocused;
             DefaultColor = bindable.TextColor;
@@ -17,7 +19,7 @@ namespace Xamarin.Forms.BehaviorValidationPack
         }
 
 
-        protected override void OnDetachingFrom(Entry bindable)
+        protected override void OnDetachingFrom(MaterialTextField bindable)
         {
             bindable.Unfocused -= Bindable_Unfocused;
             base.OnDetachingFrom(bindable);
@@ -25,11 +27,8 @@ namespace Xamarin.Forms.BehaviorValidationPack
 
         void Bindable_Unfocused(object sender, FocusEventArgs e)
         {
-            bool IsValid = false;
-            IsValid = Validators.EmailValidator(((Entry)sender).ValidatedText());
+            bool IsValid = Validators.CnpjValidator(((MaterialTextField)sender).ValidatedText());
             ((Entry)sender).TextColor = IsValid ? DefaultColor : Color.Red;
-
         }
-
     }
 }
