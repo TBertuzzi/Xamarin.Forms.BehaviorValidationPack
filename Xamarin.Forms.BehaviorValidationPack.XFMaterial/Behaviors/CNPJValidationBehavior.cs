@@ -28,7 +28,7 @@ namespace Xamarin.Forms.BehaviorValidationPack.XFMaterial
         void Bindable_Unfocused(object sender, FocusEventArgs e)
         {
             bool IsValid = Validators.CnpjValidator(((MaterialTextField)sender).ValidatedText());
-            ((Entry)sender).TextColor = IsValid ? DefaultColor : Color.Red;
+            ((MaterialTextField)sender).TextColor = IsValid ? DefaultColor : Color.Red;
         }
     }
 }

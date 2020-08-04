@@ -28,7 +28,7 @@ namespace Xamarin.Forms.BehaviorValidationPack.XFMaterial
         {
             bool IsValid = false;
             IsValid = Validators.EmailValidator(((MaterialTextField)sender).ValidatedText());
-            ((Entry)sender).TextColor = IsValid ? DefaultColor : Color.Red;
+            ((MaterialTextField)sender).TextColor = IsValid ? DefaultColor : Color.Red;
 
         }
 

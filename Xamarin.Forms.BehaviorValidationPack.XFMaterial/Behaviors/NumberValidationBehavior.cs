@@ -29,7 +29,7 @@ namespace Xamarin.Forms.BehaviorValidationPack.XFMaterial
 
             bool isValid = int.TryParse(args.NewTextValue, out result);
 
-            ((Entry)sender).TextColor = isValid ? DefaultColor : Color.Red;
+            ((MaterialTextField)sender).TextColor = isValid ? DefaultColor : Color.Red;
         }
     }
 }

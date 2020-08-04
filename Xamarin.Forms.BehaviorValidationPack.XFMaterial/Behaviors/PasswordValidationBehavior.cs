@@ -29,7 +29,7 @@ public class PasswordValidationBehavior : Behavior<MaterialTextField>
     {
         bool IsValid = false;
         IsValid = Validators.PasswordValidator(((MaterialTextField)sender).ValidatedText());
-        ((Entry)sender).TextColor = IsValid ? DefaultColor : Color.Red;
+        ((MaterialTextField)sender).TextColor = IsValid ? DefaultColor : Color.Red;
     }
 
     protected override void OnDetachingFrom(MaterialTextField bindable)

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             xmlns:behaviorPack="clr-namespace:Xamarin.Forms.BehaviorValidationPack.XFMaterial;assembly=Xamarin.Forms.BehaviorValidationPack.XFMaterial"
+
+             x:Class="BehaviorsPackSample.MaterialPage">
+    <ContentPage.Content>
+
+         <StackLayout Padding="0,60,0,0">
+
+       <Label Text="Name" FontSize="Small" />
+        <material:MaterialTextField Placeholder="Enter Your Name" />
+
+
+        <Label Text="Age" FontSize="Small" />
+        <material:MaterialTextField Placeholder="Age" >
+            <material:MaterialTextField.Behaviors>
+                <behaviorPack:MaxLengthValidationBehavior  MaxLength="2"/>
+                <behaviorPack:NumberValidationBehavior/>
+            </material:MaterialTextField.Behaviors>
+        </material:MaterialTextField>
+
+      <Label Text="Date" FontSize="Small" />
+        <DatePicker >
+            <DatePicker.Behaviors>
+                <behaviorPack:DateValidationBehavior/>
+             
+            </DatePicker.Behaviors>
+        </DatePicker>
+
+        <Label Text="Email" FontSize="Small" />
+        <material:MaterialTextField Placeholder="Enter Your Email ID" >
+            <material:MaterialTextField.Behaviors>
+                <behaviorPack:EmailValidationBehavior />
+            </material:MaterialTextField.Behaviors>
+        </material:MaterialTextField>
+        <Label Text="Password" FontSize="Small" />
+        <material:MaterialTextField x:Name="txtpassword" InputType="Password"  Placeholder="Enter Your Password" >
+            <material:MaterialTextField.Behaviors>
+                <behaviorPack:PasswordValidationBehavior />
+            </material:MaterialTextField.Behaviors>
+        </material:MaterialTextField>
+
+        <Label Text="Confirm Password" FontSize="Small" />
+        <material:MaterialTextField  InputType="Password" Placeholder="Enter same as above" >
+            <material:MaterialTextField.Behaviors>
+                <behaviorPack:PasswordValidationBehavior />
+                <behaviorPack:CompareValidationBehavior BindingContext="{x:Reference txtpassword}" Text="{Binding Text}"/>
+            </material:MaterialTextField.Behaviors>
+        </material:MaterialTextField>
+        <Label Text="Phone Number" FontSize="Small" />
+        <material:MaterialTextField  Placeholder="Enter 10 digit phone number" >
+            <material:MaterialTextField.Behaviors>
+                <behaviorPack:NumberValidationBehavior />
+                <behaviorPack:MaskedBehavior Mask="(XX)XXXX-XXXX" />
+            </material:MaterialTextField.Behaviors>
+        </material:MaterialTextField>
+        <Label Text="CPF" FontSize="Small" />
+        <material:MaterialTextField  Placeholder="Enter CPF" >
+            <material:MaterialTextField.Behaviors>
+                <behaviorPack:CPFValidationBehavior />
+                <behaviorPack:MaskedBehavior Mask="XXX.XXX.XXX-XX" />
+            </material:MaterialTextField.Behaviors>
+        </material:MaterialTextField>
+        <Label Text="CEP" FontSize="Small" />
+        <material:MaterialTextField  Placeholder="Enter CEP" >
+            <material:MaterialTextField.Behaviors>
+                <behaviorPack:CEPValidationBehavior />
+                <behaviorPack:MaskedBehavior Mask="XXXXX-XXX" />
+            </material:MaterialTextField.Behaviors>
+        </material:MaterialTextField>
+        <Label Text="CNPJ" FontSize="Small" />
+        <material:MaterialTextField  Placeholder="Enter CNPJ" >
+            <material:MaterialTextField.Behaviors>
+                <behaviorPack:CNPJValidationBehavior />
+                <behaviorPack:MaskedBehavior Mask="XX.XXX.XXX/XXXX-XX" />
+            </material:MaterialTextField.Behaviors>
+        </material:MaterialTextField>
+        <Label Text="CNPJ or CPF" FontSize="Small" />
+        <material:MaterialTextField  Placeholder="Enter CNPJ or CPF" >
+            <material:MaterialTextField.Behaviors>
+                <behaviorPack:CPFCNPJValidationBehavior />
+            </material:MaterialTextField.Behaviors>
+        </material:MaterialTextField>
+    </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

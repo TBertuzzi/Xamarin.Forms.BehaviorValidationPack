@@ -16,7 +16,7 @@
     <Authors>tbertuzzi</Authors>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.5.0.530" />
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1239" />
     <PackageReference Include="XF.Material" Version="1.6.5" />
   </ItemGroup>
   <ItemGroup>
