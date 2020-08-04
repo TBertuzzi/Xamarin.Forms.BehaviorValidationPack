@@ -12,7 +12,7 @@ namespace BehaviorsPackSample
 			InitializeComponent();
 			XF.Material.Forms.Material.Init(this);
 
-			MainPage = new MaterialPage();
+			MainPage = new MainPage();
 		}
 
 		protected override void OnStart ()
