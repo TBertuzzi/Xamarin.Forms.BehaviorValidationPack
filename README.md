@@ -28,7 +28,7 @@ You just need to add the reference in your xaml file.
     xmlns:behaviorPack="clr-namespace:Xamarin.Forms.BehaviorValidationPack;assembly=Xamarin.Forms.BehaviorValidationPack"
 ```
 
-Behavior
+**Behavior**
 
 
 ```csharp
@@ -51,7 +51,9 @@ Behavior
 
 ```
 
-Behavior for XF-Material-Library
+**Behavior for XF-Material-Library**
+
+ ###### This package is for anyone using the [XF.Material](https://github.com/Baseflow/XF-Material-Library)
 
 
 ```csharp
