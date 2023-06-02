@@ -20,9 +20,8 @@ namespace Xamarin.Forms.BehaviorValidationPack.XFMaterial
 
         public static bool CpfValidator(string cpf)
         {
-            if (string.IsNullOrEmpty(cpf)) {
+            if (string.IsNullOrEmpty(cpf)) 
                 return false;
-            }
             
             cpf = cpf.Replace(".", "").Replace("-", "");
             cpf = cpf.Trim();
@@ -39,7 +38,14 @@ namespace Xamarin.Forms.BehaviorValidationPack.XFMaterial
             soma = 0;
 
             for (int i = 0; i < 9; i++)
-                soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];
+            {
+                int digit;
+
+                if (int.TryParse(tempCpf[i].ToString(), out digit))
+                    soma += digit * multiplicador1[i];                
+                else
+                    return false;
+            }                
             resto = soma % 11;
             if (resto < 2)
                 resto = 0;
@@ -49,7 +55,13 @@ namespace Xamarin.Forms.BehaviorValidationPack.XFMaterial
             tempCpf = tempCpf + digito;
             soma = 0;
             for (int i = 0; i < 10; i++)
-                soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
+            {
+                int digit;
+                if (int.TryParse(tempCpf[i].ToString(), out digit))
+                    soma += digit * multiplicador2[i];                
+                else
+                    return false;
+            }
             resto = soma % 11;
             if (resto < 2)
                 resto = 0;
